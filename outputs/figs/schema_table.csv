@@ -1,0 +1,15 @@
+,dtype,n_unique,example
+image_id,object,12568,0002cc93b.jpg
+has_defect,int64,2,1
+n_defect_classes,int64,4,1
+class_ids,object,10,1
+primary_class,int64,5,1
+defect_area_px,int64,5935,4396
+area_class_1,int64,837,4396
+area_class_2,int64,242,0
+area_class_3,int64,4704,0
+area_class_4,int64,797,0
+has_class_1,int64,2,1
+has_class_2,int64,2,0
+has_class_3,int64,2,0
+has_class_4,int64,2,0

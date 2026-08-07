@@ -1,0 +1,582 @@
+[
+  {
+    "model": "unet",
+    "note": "The headline metrics elsewhere are reported at the pre-registered operating point (threshold 0.5, min area 300 px), fixed before training so they measure the model and not a search over post-processing. This sweep is analysis alongside that number, never a replacement for it.",
+    "headline_point": {
+      "prob_threshold": 0.5,
+      "min_class_area_px": 300
+    },
+    "recommendation_rule": "lowest false-positive rate among operating points retaining >= 95% of the headline defect-only Dice",
+    "recommended_point": {
+      "prob_threshold": 0.8,
+      "min_class_area_px": 1000,
+      "dice_defect_only": 0.6940700522995439,
+      "miou_defect_only": 0.5682931130738689,
+      "false_positive_rate": 0.23813559322033898,
+      "kaggle_style_dice_all_pairs": 0.8361671901460276,
+      "is_headline_point": false
+    },
+    "grid": [
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7064775694701928,
+        "miou_defect_only": 0.5775207606832673,
+        "false_positive_rate": 0.5110169491525424,
+        "kaggle_style_dice_all_pairs": 0.6115830067560921,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.706038690074968,
+        "miou_defect_only": 0.5772767669429281,
+        "false_positive_rate": 0.4025423728813559,
+        "kaggle_style_dice_all_pairs": 0.7164336539216617,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7004887868782069,
+        "miou_defect_only": 0.5732916372320884,
+        "false_positive_rate": 0.27627118644067794,
+        "kaggle_style_dice_all_pairs": 0.7939133463610202,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6608088719597416,
+        "miou_defect_only": 0.5416654511995329,
+        "false_positive_rate": 0.21440677966101696,
+        "kaggle_style_dice_all_pairs": 0.8478884418821554,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5733842964967434,
+        "miou_defect_only": 0.4714073878453218,
+        "false_positive_rate": 0.14915254237288136,
+        "kaggle_style_dice_all_pairs": 0.890163638438334,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7061993556301396,
+        "miou_defect_only": 0.5775021516866681,
+        "false_positive_rate": 0.49322033898305084,
+        "kaggle_style_dice_all_pairs": 0.6380951160429501,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7058229198279108,
+        "miou_defect_only": 0.5772975260118991,
+        "false_positive_rate": 0.3898305084745763,
+        "kaggle_style_dice_all_pairs": 0.7295297411889567,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.6999602895377542,
+        "miou_defect_only": 0.5730540429893611,
+        "false_positive_rate": 0.27203389830508473,
+        "kaggle_style_dice_all_pairs": 0.8027887559939337,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.659346700840113,
+        "miou_defect_only": 0.5407006773622244,
+        "false_positive_rate": 0.20508474576271185,
+        "kaggle_style_dice_all_pairs": 0.8543450949771719,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5690897898597297,
+        "miou_defect_only": 0.46804401729118306,
+        "false_positive_rate": 0.1423728813559322,
+        "kaggle_style_dice_all_pairs": 0.8926412323221199,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7056512689584797,
+        "miou_defect_only": 0.5771757322442912,
+        "false_positive_rate": 0.4822033898305085,
+        "kaggle_style_dice_all_pairs": 0.6576081790089664,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7053620971474636,
+        "miou_defect_only": 0.5770219284004358,
+        "false_positive_rate": 0.3813559322033898,
+        "kaggle_style_dice_all_pairs": 0.7386135731561214,
+        "is_headline_point": true
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.6987964557974686,
+        "miou_defect_only": 0.5722557089837342,
+        "false_positive_rate": 0.26016949152542374,
+        "kaggle_style_dice_all_pairs": 0.8127679572260356,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6574511181205256,
+        "miou_defect_only": 0.5392081186030804,
+        "false_positive_rate": 0.19915254237288135,
+        "kaggle_style_dice_all_pairs": 0.8603429031798712,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.56637715530332,
+        "miou_defect_only": 0.46598736929598217,
+        "false_positive_rate": 0.14067796610169492,
+        "kaggle_style_dice_all_pairs": 0.8940489686818621,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7049918799068654,
+        "miou_defect_only": 0.5766865680056354,
+        "false_positive_rate": 0.4711864406779661,
+        "kaggle_style_dice_all_pairs": 0.6723322885668285,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.704615346806384,
+        "miou_defect_only": 0.5764777938785037,
+        "false_positive_rate": 0.37457627118644066,
+        "kaggle_style_dice_all_pairs": 0.7474582285625144,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.698332907891609,
+        "miou_defect_only": 0.5718880610827141,
+        "false_positive_rate": 0.25,
+        "kaggle_style_dice_all_pairs": 0.8212547464680201,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6564186403839369,
+        "miou_defect_only": 0.5383316698863164,
+        "false_positive_rate": 0.1906779661016949,
+        "kaggle_style_dice_all_pairs": 0.866561775400163,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5618322608987456,
+        "miou_defect_only": 0.4624211430377929,
+        "false_positive_rate": 0.13644067796610168,
+        "kaggle_style_dice_all_pairs": 0.8961929508446224,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7040369373014332,
+        "miou_defect_only": 0.5758994120995057,
+        "false_positive_rate": 0.4610169491525424,
+        "kaggle_style_dice_all_pairs": 0.6875119670004107,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7038020021890414,
+        "miou_defect_only": 0.5757691063337558,
+        "false_positive_rate": 0.3635593220338983,
+        "kaggle_style_dice_all_pairs": 0.7558957276354288,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.6964213112233638,
+        "miou_defect_only": 0.5703535475859683,
+        "false_positive_rate": 0.2440677966101695,
+        "kaggle_style_dice_all_pairs": 0.8274491843678906,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6534843018161355,
+        "miou_defect_only": 0.5360990237903627,
+        "false_positive_rate": 0.1864406779661017,
+        "kaggle_style_dice_all_pairs": 0.8710210079229778,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5554830408854687,
+        "miou_defect_only": 0.45759827549578974,
+        "false_positive_rate": 0.12966101694915255,
+        "kaggle_style_dice_all_pairs": 0.8986793425750508,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.702325261861964,
+        "miou_defect_only": 0.5743123589190713,
+        "false_positive_rate": 0.44152542372881354,
+        "kaggle_style_dice_all_pairs": 0.7039772171895787,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7020814935476078,
+        "miou_defect_only": 0.5741794709533257,
+        "false_positive_rate": 0.35338983050847456,
+        "kaggle_style_dice_all_pairs": 0.7664925891365314,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.6940700522995439,
+        "miou_defect_only": 0.5682931130738689,
+        "false_positive_rate": 0.23813559322033898,
+        "kaggle_style_dice_all_pairs": 0.8361671901460276,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6501708497412975,
+        "miou_defect_only": 0.533405688789159,
+        "false_positive_rate": 0.18135593220338983,
+        "kaggle_style_dice_all_pairs": 0.8773162384728938,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5468463091704784,
+        "miou_defect_only": 0.45044057990678293,
+        "false_positive_rate": 0.12203389830508475,
+        "kaggle_style_dice_all_pairs": 0.9011417283308042,
+        "is_headline_point": false
+      }
+    ]
+  },
+  {
+    "model": "deeplabv3p",
+    "note": "The headline metrics elsewhere are reported at the pre-registered operating point (threshold 0.5, min area 300 px), fixed before training so they measure the model and not a search over post-processing. This sweep is analysis alongside that number, never a replacement for it.",
+    "headline_point": {
+      "prob_threshold": 0.5,
+      "min_class_area_px": 300
+    },
+    "recommendation_rule": "lowest false-positive rate among operating points retaining >= 95% of the headline defect-only Dice",
+    "recommended_point": {
+      "prob_threshold": 0.8,
+      "min_class_area_px": 1000,
+      "dice_defect_only": 0.7094736239493369,
+      "miou_defect_only": 0.5846303432782232,
+      "false_positive_rate": 0.19915254237288135,
+      "kaggle_style_dice_all_pairs": 0.8788110705187162,
+      "is_headline_point": false
+    },
+    "grid": [
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7250959823587377,
+        "miou_defect_only": 0.5970277501286043,
+        "false_positive_rate": 0.5525423728813559,
+        "kaggle_style_dice_all_pairs": 0.7105669259151086,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7249475021590776,
+        "miou_defect_only": 0.5969457880412392,
+        "false_positive_rate": 0.4152542372881356,
+        "kaggle_style_dice_all_pairs": 0.7803550726491063,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7199865937029629,
+        "miou_defect_only": 0.5931227638162201,
+        "false_positive_rate": 0.2796610169491525,
+        "kaggle_style_dice_all_pairs": 0.837034705974254,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6801284286447274,
+        "miou_defect_only": 0.5613380571426697,
+        "false_positive_rate": 0.20084745762711864,
+        "kaggle_style_dice_all_pairs": 0.8755710007348428,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.3,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5923031163331298,
+        "miou_defect_only": 0.4899833222958234,
+        "false_positive_rate": 0.09915254237288136,
+        "kaggle_style_dice_all_pairs": 0.911027597040975,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7251727095710147,
+        "miou_defect_only": 0.5973762033418533,
+        "false_positive_rate": 0.5211864406779662,
+        "kaggle_style_dice_all_pairs": 0.729471930137443,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7249790916601168,
+        "miou_defect_only": 0.5972691280598518,
+        "false_positive_rate": 0.3855932203389831,
+        "kaggle_style_dice_all_pairs": 0.794679333023308,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7188712973213492,
+        "miou_defect_only": 0.5926156054963673,
+        "false_positive_rate": 0.26610169491525426,
+        "kaggle_style_dice_all_pairs": 0.8456285429896928,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6769277861499744,
+        "miou_defect_only": 0.5592010974624521,
+        "false_positive_rate": 0.18135593220338983,
+        "kaggle_style_dice_all_pairs": 0.8839704328733605,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.4,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5859126470295236,
+        "miou_defect_only": 0.4852378722848266,
+        "false_positive_rate": 0.08898305084745763,
+        "kaggle_style_dice_all_pairs": 0.9143037212451108,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.724836585629255,
+        "miou_defect_only": 0.5971950359900353,
+        "false_positive_rate": 0.49830508474576274,
+        "kaggle_style_dice_all_pairs": 0.7433466032057134,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7245273405897713,
+        "miou_defect_only": 0.5970271477630934,
+        "false_positive_rate": 0.36186440677966103,
+        "kaggle_style_dice_all_pairs": 0.8049577607016415,
+        "is_headline_point": true
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7167770602487078,
+        "miou_defect_only": 0.5911654699894006,
+        "false_positive_rate": 0.24915254237288137,
+        "kaggle_style_dice_all_pairs": 0.8533883347625714,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.676157508742793,
+        "miou_defect_only": 0.5587022476758563,
+        "false_positive_rate": 0.16440677966101694,
+        "kaggle_style_dice_all_pairs": 0.8902262519777783,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.5,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5808929408416764,
+        "miou_defect_only": 0.481211204611584,
+        "false_positive_rate": 0.07796610169491526,
+        "kaggle_style_dice_all_pairs": 0.9166791266082592,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7241034647357807,
+        "miou_defect_only": 0.5965712899359372,
+        "false_positive_rate": 0.4788135593220339,
+        "kaggle_style_dice_all_pairs": 0.7560714607727328,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7236433459399692,
+        "miou_defect_only": 0.5963121058758608,
+        "false_positive_rate": 0.3423728813559322,
+        "kaggle_style_dice_all_pairs": 0.8142802924817956,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7153825377052427,
+        "miou_defect_only": 0.5900076515474602,
+        "false_positive_rate": 0.22796610169491524,
+        "kaggle_style_dice_all_pairs": 0.8626389275982825,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.671874113496159,
+        "miou_defect_only": 0.5552374732596498,
+        "false_positive_rate": 0.15423728813559323,
+        "kaggle_style_dice_all_pairs": 0.8954898188965849,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.6,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.579041631526324,
+        "miou_defect_only": 0.47983873057865106,
+        "false_positive_rate": 0.06694915254237288,
+        "kaggle_style_dice_all_pairs": 0.919302107385919,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7228239822264965,
+        "miou_defect_only": 0.5953240227556983,
+        "false_positive_rate": 0.4533898305084746,
+        "kaggle_style_dice_all_pairs": 0.7684210006776995,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.72249326586252,
+        "miou_defect_only": 0.5951440190163352,
+        "false_positive_rate": 0.3254237288135593,
+        "kaggle_style_dice_all_pairs": 0.822869228095385,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7126662698596574,
+        "miou_defect_only": 0.5877330077141972,
+        "false_positive_rate": 0.21525423728813559,
+        "kaggle_style_dice_all_pairs": 0.8701121822186888,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.6664513302086208,
+        "miou_defect_only": 0.5507796158392264,
+        "false_positive_rate": 0.13898305084745763,
+        "kaggle_style_dice_all_pairs": 0.901686707926175,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.7,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5746136640269855,
+        "miou_defect_only": 0.4764256980019029,
+        "false_positive_rate": 0.06016949152542373,
+        "kaggle_style_dice_all_pairs": 0.9216614520610817,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 0,
+        "dice_defect_only": 0.7204054049760319,
+        "miou_defect_only": 0.5928262788449917,
+        "false_positive_rate": 0.411864406779661,
+        "kaggle_style_dice_all_pairs": 0.7866760599493872,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 300,
+        "dice_defect_only": 0.7202091785970061,
+        "miou_defect_only": 0.5927222364040904,
+        "false_positive_rate": 0.2983050847457627,
+        "kaggle_style_dice_all_pairs": 0.8369666274932337,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 1000,
+        "dice_defect_only": 0.7094736239493369,
+        "miou_defect_only": 0.5846303432782232,
+        "false_positive_rate": 0.19915254237288135,
+        "kaggle_style_dice_all_pairs": 0.8788110705187162,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 2000,
+        "dice_defect_only": 0.658859118823896,
+        "miou_defect_only": 0.5442103063455109,
+        "false_positive_rate": 0.11694915254237288,
+        "kaggle_style_dice_all_pairs": 0.9075779008923488,
+        "is_headline_point": false
+      },
+      {
+        "prob_threshold": 0.8,
+        "min_class_area_px": 4000,
+        "dice_defect_only": 0.5642342573564063,
+        "miou_defect_only": 0.46817154451827186,
+        "false_positive_rate": 0.05423728813559322,
+        "kaggle_style_dice_all_pairs": 0.9235799465666296,
+        "is_headline_point": false
+      }
+    ]
+  }
+]

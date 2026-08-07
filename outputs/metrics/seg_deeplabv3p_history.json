@@ -1,0 +1,127 @@
+{
+  "model": "deeplabv3p",
+  "best_epoch": 15,
+  "best_val_dice_defect_only": 0.7245273405897713,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.27838495987093753,
+      "val_dice_defect_only": 0.6307210665719268,
+      "val_miou_defect_only": 0.496289628317199,
+      "val_false_positive_rate": 0.809322033898305,
+      "seconds": 471.4
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.20554952274646113,
+      "val_dice_defect_only": 0.6169559162373373,
+      "val_miou_defect_only": 0.4826970761170359,
+      "val_false_positive_rate": 0.9186440677966101,
+      "seconds": 466.4
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.19323627048640685,
+      "val_dice_defect_only": 0.6564673847554073,
+      "val_miou_defect_only": 0.5247756196668406,
+      "val_false_positive_rate": 0.7033898305084746,
+      "seconds": 467.6
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1807876808700822,
+      "val_dice_defect_only": 0.6746046423759722,
+      "val_miou_defect_only": 0.5433079228772189,
+      "val_false_positive_rate": 0.4788135593220339,
+      "seconds": 468.2
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.17369431480883982,
+      "val_dice_defect_only": 0.6867568565763019,
+      "val_miou_defect_only": 0.5542523231951948,
+      "val_false_positive_rate": 0.5542372881355933,
+      "seconds": 466.2
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.16632858659051786,
+      "val_dice_defect_only": 0.6874453625274979,
+      "val_miou_defect_only": 0.5569756048852924,
+      "val_false_positive_rate": 0.40423728813559323,
+      "seconds": 467.9
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.16191972460290774,
+      "val_dice_defect_only": 0.6898465643534124,
+      "val_miou_defect_only": 0.5611206693947841,
+      "val_false_positive_rate": 0.48898305084745763,
+      "seconds": 467.8
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.15430839390421264,
+      "val_dice_defect_only": 0.6945712638417855,
+      "val_miou_defect_only": 0.5649287171221804,
+      "val_false_positive_rate": 0.573728813559322,
+      "seconds": 466.6
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.15029889847330635,
+      "val_dice_defect_only": 0.7031050522977362,
+      "val_miou_defect_only": 0.5737701919545434,
+      "val_false_positive_rate": 0.5059322033898305,
+      "seconds": 467.2
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.14449277371027253,
+      "val_dice_defect_only": 0.708616348282038,
+      "val_miou_defect_only": 0.5781295202190061,
+      "val_false_positive_rate": 0.4491525423728814,
+      "seconds": 465.2
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.13980619446189102,
+      "val_dice_defect_only": 0.7147985574115634,
+      "val_miou_defect_only": 0.5858507350657027,
+      "val_false_positive_rate": 0.40508474576271186,
+      "seconds": 466.9
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.1342150564563155,
+      "val_dice_defect_only": 0.7174677402150321,
+      "val_miou_defect_only": 0.5898472559703452,
+      "val_false_positive_rate": 0.34152542372881356,
+      "seconds": 464.8
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.13054192732596195,
+      "val_dice_defect_only": 0.7194499372476179,
+      "val_miou_defect_only": 0.5916572097277888,
+      "val_false_positive_rate": 0.3305084745762712,
+      "seconds": 465.8
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.1299773490287743,
+      "val_dice_defect_only": 0.7238159991831744,
+      "val_miou_defect_only": 0.5964643372705245,
+      "val_false_positive_rate": 0.33305084745762714,
+      "seconds": 465.5
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.12742219933994176,
+      "val_dice_defect_only": 0.7245273405897713,
+      "val_miou_defect_only": 0.5970271477630934,
+      "val_false_positive_rate": 0.36186440677966103,
+      "seconds": 465.8
+    }
+  ]
+}

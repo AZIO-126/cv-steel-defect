@@ -1,0 +1,213 @@
+{
+  "headline_note": "Dice and mIoU below are computed on defect-bearing (image, class) pairs ONLY. Pairs with an empty ground truth are excluded because scoring empty-vs-empty as a perfect 1.0 lets a model that predicts nothing win. The behaviour on defect-free images is reported separately under false_positives.",
+  "headline": {
+    "dice_defect_only": 0.7053620971474636,
+    "miou_defect_only": 0.5770219284004358,
+    "n_defect_pairs": 1417
+  },
+  "per_class_dice_defect_only": {
+    "1": 0.642220453230312,
+    "2": 0.6358427163813953,
+    "3": 0.7144587674232606,
+    "4": 0.7382525945487446
+  },
+  "per_class_iou_defect_only": {
+    "1": 0.4999790659966743,
+    "2": 0.501063341628602,
+    "3": 0.588192217314015,
+    "4": 0.6140324201960315
+  },
+  "per_class_n_pairs": {
+    "1": 179,
+    "2": 47,
+    "3": 1034,
+    "4": 157
+  },
+  "false_positives": {
+    "n_defect_free_images": 1180,
+    "n_flagged": 450,
+    "false_positive_rate": 0.3813559322033898,
+    "mean_flagged_area_px": 7700.075555555555,
+    "wrong_class_fp_rate_within_defect_images": 0.377137024751212,
+    "note": "false_positive_rate = share of DEFECT-FREE validation images on which the model predicted at least one defect pixel after post-processing. It is the counterweight to the defect-only headline: a model can raise the headline by predicting more aggressively, and the cost of doing so lands here."
+  },
+  "inflated_reference": {
+    "kaggle_style_dice_all_pairs": 0.7386135731561214,
+    "note": "All (image, class) pairs with empty-vs-empty counted as 1.0, matching the Kaggle leaderboard convention. Reported only to show how much of that number is correctly-predicted emptiness; it is NOT the headline."
+  },
+  "grouped_by_area": {
+    "threshold_px": 10203,
+    "threshold_rule": "median ground-truth area over defect-bearing val pairs",
+    "small": {
+      "n_pairs": 709,
+      "dice": 0.6807218385545278,
+      "iou": 0.5512137358039533,
+      "median_gt_area_px": 4056,
+      "missed_entirely": 14
+    },
+    "large": {
+      "n_pairs": 708,
+      "dice": 0.7300371583655306,
+      "iou": 0.6028665732463484,
+      "median_gt_area_px": 25957,
+      "missed_entirely": 6
+    }
+  },
+  "model": "unet",
+  "role": "champion",
+  "encoder": "resnet34",
+  "encoder_weights": "imagenet",
+  "trainable_parameters": 24436804,
+  "loss": "0.5 * BCE + 0.5 * (1 - soft Dice)",
+  "input_size_hw": [
+    256,
+    1600
+  ],
+  "postprocess": {
+    "prob_threshold": 0.5,
+    "min_class_area_px": 300
+  },
+  "optimiser": {
+    "name": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "schedule": "cosine annealing"
+  },
+  "batch_size": 8,
+  "epochs_run": 15,
+  "best_epoch": 14,
+  "seed": 42,
+  "split": {
+    "train_csv": "splits/train.csv",
+    "val_csv": "splits/val.csv",
+    "n_val_images": 2514
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3223893700559048,
+      "val_dice_defect_only": 0.5864730086296082,
+      "val_miou_defect_only": 0.45354143699487526,
+      "val_false_positive_rate": 0.8762711864406779,
+      "seconds": 594.7
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.23539155489426983,
+      "val_dice_defect_only": 0.6192081794834958,
+      "val_miou_defect_only": 0.48628623619675804,
+      "val_false_positive_rate": 0.8245762711864407,
+      "seconds": 591.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2179200190896536,
+      "val_dice_defect_only": 0.5792328520745113,
+      "val_miou_defect_only": 0.4381008990057347,
+      "val_false_positive_rate": 0.888135593220339,
+      "seconds": 592.7
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.20616238248226038,
+      "val_dice_defect_only": 0.6339595276286436,
+      "val_miou_defect_only": 0.5014361096124202,
+      "val_false_positive_rate": 0.788135593220339,
+      "seconds": 589.3
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.19732460791132395,
+      "val_dice_defect_only": 0.6702611326093812,
+      "val_miou_defect_only": 0.534598484441418,
+      "val_false_positive_rate": 0.8593220338983051,
+      "seconds": 590.7
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.1869705504964693,
+      "val_dice_defect_only": 0.6660128025009574,
+      "val_miou_defect_only": 0.5348349136715519,
+      "val_false_positive_rate": 0.6279661016949153,
+      "seconds": 589.0
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.18141189210597355,
+      "val_dice_defect_only": 0.67435566303424,
+      "val_miou_defect_only": 0.5435906535530005,
+      "val_false_positive_rate": 0.6533898305084745,
+      "seconds": 587.4
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.17235220468322787,
+      "val_dice_defect_only": 0.680401355685356,
+      "val_miou_defect_only": 0.5486444645790207,
+      "val_false_positive_rate": 0.559322033898305,
+      "seconds": 591.1
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.16674436822627778,
+      "val_dice_defect_only": 0.6864229416262677,
+      "val_miou_defect_only": 0.5562183269943931,
+      "val_false_positive_rate": 0.5847457627118644,
+      "seconds": 590.3
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.15866422988559642,
+      "val_dice_defect_only": 0.6888234250974704,
+      "val_miou_defect_only": 0.5573981270736648,
+      "val_false_positive_rate": 0.576271186440678,
+      "seconds": 591.9
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.156132753618109,
+      "val_dice_defect_only": 0.6955388269171312,
+      "val_miou_defect_only": 0.5642860104530051,
+      "val_false_positive_rate": 0.47627118644067795,
+      "seconds": 590.9
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.15087354277812276,
+      "val_dice_defect_only": 0.6994540295094978,
+      "val_miou_defect_only": 0.5697237666460943,
+      "val_false_positive_rate": 0.41271186440677965,
+      "seconds": 590.1
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.14651625896107026,
+      "val_dice_defect_only": 0.7038517642237941,
+      "val_miou_defect_only": 0.575141607790664,
+      "val_false_positive_rate": 0.3923728813559322,
+      "seconds": 590.0
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.14471363383463945,
+      "val_dice_defect_only": 0.7053620971474636,
+      "val_miou_defect_only": 0.5770219284004358,
+      "val_false_positive_rate": 0.3813559322033898,
+      "seconds": 591.6
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.1432896962031206,
+      "val_dice_defect_only": 0.7052883583795175,
+      "val_miou_defect_only": 0.5769541288733322,
+      "val_false_positive_rate": 0.3983050847457627,
+      "seconds": 591.1
+    }
+  ],
+  "empty_prediction_baseline": {
+    "dice_defect_only": 0.0,
+    "kaggle_style_dice_all_pairs": 0.8590891010342084,
+    "false_positive_rate": 0.0
+  },
+  "checkpoint": "ckpt/unet_resnet34.pth"
+}

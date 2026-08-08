@@ -124,7 +124,10 @@ Plain BCE won. Positive-weighting, the intuitive fix for imbalance, was the wors
 on class 2 (247 images) destabilised training and actually lowered its F1 to 0.571. `WeightedRandomSampler`
 was rejected on principle rather than tested to convergence, because it weights whole images and
 427 images here carry several classes at once, so no per-image weight can rebalance all four
-classes independently. Loss-level BCE acts per label and does not have that problem.
+classes independently. Loss-level BCE acts per label and does not have that problem. The figures in
+this table are the best validation macro-F1 reached during each sweep; the 0.904 headline in
+Section 3.3 is the final evaluation of the reloaded BCE checkpoint, which is why it is slightly
+higher than the 0.898 here.
 
 ### 3.3 Results
 
@@ -202,8 +205,9 @@ EfficientNet-B2 (challenger), pros:
 EfficientNet-B2, cons:
 
 - Its parameter efficiency does not convert into speed here. Depthwise-separable convolutions are
-  memory-bandwidth-bound on the T4, so it measured 0.216 s/step against ResNet-50's 0.229, only a
-  6% wall-clock gain from a third of the parameters.
+  memory-bandwidth-bound on the T4, so it ran only marginally faster per epoch than ResNet-50
+  despite carrying about a third of the parameters. The gain is footprint and accuracy, not
+  throughput.
 - Its BatchNorm statistics depend on batch composition, and with class 2 under 2% prevalence many
   batches carry no class-2 example, which makes its validation curve less stable.
 - It shares ResNet-50's 32× downsample and has a narrower stem, so it discards the thin class-2

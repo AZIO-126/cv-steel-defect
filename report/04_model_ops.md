@@ -1,10 +1,8 @@
 # Model Operations
 
-This section covers the two things the rubric asks for: the mechanism by which the models would
-be deployed on a real line, and the plan for maintaining them and updating their parameters once
-they are there. Nothing here depends on the final numbers from the classification and segmentation
-phases. Where a measured result belongs, the text names the file the number will come from rather
-than quoting a figure that does not exist yet.
+This section describes how the models would be deployed on a real inspection line, and the plan for
+maintaining them and updating their parameters once they are there. Measured results are quoted
+from the phase 3 and phase 4 evaluation files (`outputs/metrics/`).
 
 ## 1. Deployment architecture
 
@@ -25,9 +23,10 @@ oldest frame and increments a counter rather than growing the buffer. An unbound
 a latency problem into silent data loss: the line keeps running, the model keeps scoring frames
 from thirty seconds ago, and nobody notices until a defective coil ships.
 
-The classifier triages every frame. It is the multi-label ResNet-50 head from phase 3, four
-sigmoids rather than a softmax, because 6.41% of the defect images in this dataset carry more than
-one class. The triage decision is not an argmax over the four heads. It is a threshold on the
+The classifier triages every frame. It is the multi-label EfficientNet-B2 head from phase 3, the
+challenger that won every classification metric (macro-F1 0.934 vs ResNet-50's 0.904) and is also
+the lighter model to serve, with four sigmoids rather than a softmax, because 6.41% of the defect
+images in this dataset carry more than one class. The triage decision is not an argmax over the four heads. It is a threshold on the
 has-defect score, and the threshold is a business parameter: recall matters more than precision
 here because a missed defect ships and a false alarm only costs an operator ten seconds.
 
@@ -232,16 +231,17 @@ anything.
 defect-bearing images by at least 0.01 with no more than 0.5 percentage points of regression in the
 false-positive rate on defect-free images, and no per-class Dice falls by more than 0.02. Both
 metrics are read from the phase 4 evaluation files (`outputs/metrics/seg_unet.json` and
-`seg_deeplabv3p.json` once phase 4 lands); the incumbent's baseline values come from the same
-files. A candidate that raises the headline Dice by inflating false positives fails this rule,
+`seg_deeplabv3p.json`); the incumbent's baseline values come from the same files. The deployed
+segmenter is DeepLabV3+ (defect-only Dice 0.725, the winning challenger); U-Net (0.705) is the
+fallback. A candidate that raises the headline Dice by inflating false positives fails this rule,
 which is the point of stating both numbers.
 
 ## 8. Parameter update and versioning
 
 The version string carries the metric, so the model on disk can be identified without opening a
-tracking system: `unet_r50_v20260814_dice0.8123.onnx`, meaning the U-Net with a ResNet-50 encoder,
-trained on the 2026-08-14 snapshot, scoring 0.8123 Dice on the golden set. The classifier follows
-the same pattern with its own headline metric.
+tracking system: `deeplabv3p_r34_v20260807_dice0.7245.onnx`, meaning the DeepLabV3+ with a
+ResNet-34 encoder, trained on the 2026-08-07 snapshot, scoring 0.7245 defect-only Dice on the
+golden set. The classifier follows the same pattern with its own headline metric.
 
 Each promotion writes a model registry entry recording the git commit of the training code, the
 sha256 of `splits/train.csv` and `splits/val.csv`, the data snapshot id, the golden-set evaluation

@@ -1,0 +1,12 @@
+{
+  "source_split": "inner_calibration",
+  "selection_metric": "per-class F1",
+  "grid": "0.05..0.95 inclusive, step 0.01",
+  "thresholds": [
+    0.65,
+    0.38,
+    0.5,
+    0.5
+  ],
+  "note": "Frozen from effb2_fullwidth_inner calibration; outer validation not used for tuning"
+}

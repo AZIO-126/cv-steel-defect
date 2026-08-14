@@ -1,6 +1,6 @@
 # Steel Surface Defect Detection: Classification and Segmentation on the Severstal Dataset
 
-**Authors:** _[TEAM MEMBER NAMES: fill in before submission]_
+**Authors:** Haobo Yang, Anqi Yang, Yue Wang
 
 **Course:** ADSP 32023 Advanced Computer Vision, Final Project
 
